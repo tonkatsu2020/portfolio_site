@@ -1,0 +1,13 @@
+.bread_crumbs{
+  width: 100%;
+  height: 60px;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  .bread_crumb_items{
+    padding: 0 10px;
+  }
+  .current-item{
+    font-weight: 500;
+  }
+}

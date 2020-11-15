@@ -1,0 +1,13 @@
+.top_jump{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 20;
+  color: $accent_color;
+  .fa-angle-up{
+    font-size: 36px;
+  }
+}

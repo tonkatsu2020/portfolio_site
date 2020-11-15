@@ -1,0 +1,10 @@
+// vwによるレスポンシブ
+@function vw($width, $px) {
+  
+  @return $px / $width * 100vw;
+}
+
+@function vh($height, $px) {
+  
+  @return $px / $height * 100vh;
+}

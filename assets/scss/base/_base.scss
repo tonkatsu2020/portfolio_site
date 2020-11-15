@@ -1,0 +1,50 @@
+html {
+  // フォント
+  font-family: "Oranienbaum", "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  // color: $txt_color_black;
+  @include pc {
+    font-size: 16px;
+  }
+  @include tab {
+    font-size: 14px;
+  }
+  @include sp {
+    font-size: 14px;
+  }
+}
+
+// 各セクションh1の共通スタイル
+.section_ttl {
+  text-align: center;
+  @include pc {
+    font-size: 50px;
+  }
+  @include tab {
+    font-size: 42px;
+  }
+  @include sp {
+    font-size: 42px;
+  }
+}
+.section_ttl_txt{
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+// 各セクションのインナー幅
+.section_inner {
+  width: 100%;
+  margin: 0 auto;
+  @include pc {
+    max-width: 980px;
+    padding: 0px 30px;
+  }
+  @include tab {
+    
+    padding: 0px 30px;
+  }
+  @include sp {
+    padding: 0px 15px;
+  }
+}

@@ -1,0 +1,169 @@
+header {
+  background-color: rgba(#f9f9f9, 0.8);
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  .nav_container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .logo {
+      height: 100%;
+      &_link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: 700;
+        transition: color 0.2s;
+        &:hover {
+          color: $accent_color2;
+        }
+      }
+    }
+    .menu {
+      display: flex;
+      height: 100%;
+      @include pc {
+        margin-left: auto;
+      }
+      @include tab {
+        margin-left: auto;
+      }
+      @include sp {
+        flex-direction: column;
+        position: fixed;
+        top: 0px;
+        right: -250px;
+        z-index: 10;
+        background-color: $base_color_white;
+        width: 250px;
+        padding: 80px 0px;
+        transition: right 0.5s;
+      }
+      &.show{
+        right: 0px;
+      }
+      .menu-item {
+        @include pc {
+          height: 100%;
+          padding: 0px 20px;
+        }
+        @include tab {
+          height: 100%;
+          padding: 0px 12px;
+        }
+        @include sp {
+          height: 60px;
+          padding: 40px 0px;
+          opacity: 0;
+          transform: translateY(45px);
+        }
+        &.show{
+          opacity: 1;
+          transform: translateY(0px);
+          transition: opacity 0.6s, transform 0.6s, ;
+        }
+      }
+      .menu-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s;
+        font-weight: 700;
+        transition: color 0.2s;
+        @include pc {
+          font-size: 24px;
+        }
+        @include tab {
+          font-size: 20px;
+        }
+        @include sp {
+          font-size: 30px;
+          justify-content: center;
+        }
+        &:hover {
+          color: $accent_color2;
+        }
+      }
+      .twitter_img{
+        transition: transform .2s;
+        &:hover {
+          transform: scale(1.2,1.2);
+        }
+      }
+    }
+    #toggler {
+      @include pc {
+        display: none;
+      }
+      @include tab {
+        display: none;
+      }
+      @include sp {
+        display: block;
+      }
+      position: relative;
+      margin-left: auto;
+      width: 40px;
+      height: 30px;
+      z-index: 15;
+      .toggler_icon {
+        height: 1px;
+        width: 30px;
+        background-color: $base_color_black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        transition: 0.5s;
+        &:nth-child(1) {
+          transform: translate(-50%, -12px);
+        }
+        &:nth-child(3) {
+          transform: translate(-50%, 12px);
+        }
+      }
+      &.show {
+        .toggler_icon:nth-child(1) {
+          transform: rotate(45deg) translate(-50%, 0);
+          transform-origin: 0% 50%;
+          background-color: $base_color_black;
+        }
+        .toggler_icon:nth-child(2) {
+          opacity: 0;
+        }
+        .toggler_icon:nth-child(3) {
+          transform: rotate(-45deg) translate(-50%, 0);
+          transform-origin: 0% 50%;
+          background-color: $base_color_black;
+        }
+      }
+    }
+  }
+}
+
+
+
+// ハンバーガーボタンクリック後の背景
+main::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#525252, $alpha: 0.5);
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 5;
+}
+main.show::before{
+  display: block;
+}
+main.show.opacity::before{
+  opacity: 1;
+}

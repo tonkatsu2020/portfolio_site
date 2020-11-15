@@ -1,0 +1,69 @@
+@mixin common_btn(
+  $bg-color: $btn_color_white,
+  $width:auto,
+  $height:40px,
+  $color:$txt_color_black,
+  $border-color:$btn_color_black,
+  $font-size:16px
+){
+  .common_btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: content-box;
+    width: $width;
+    height: $height;
+    background-color: $btn_color_white;
+    color: $txt_color_white;
+    font-size: $font-size;
+    border: 1px solid $border-color;
+    transition : .3s;
+    z-index: 10;
+    &::before {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background-color: $btn_color_black;
+     z-index: -1;
+     display: block;
+     content: '';
+     transform-origin: left;
+     transform: scale(1, 1);
+     transition: transform .3s;
+    }
+    &:hover{
+      background-color: $btn_color_white;
+      color: $txt_color_black;
+      &::before{
+       transform-origin: right;
+       transform: scale(0, 1);
+       transition: transform .3s;
+      }
+    }
+  }
+}
+
+// お問い合わせ送信ボタン
+input[type="submit"] {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: content-box;
+  width: 120px;
+  height: 40px;
+  background-color: $btn_color_black;
+  color: $txt_color_white;
+  font-size: 16px;
+  border: 1px solid $btn_color_black;
+  transition : .3s;
+}
+input[type="submit"]:hover {
+  background-color: $btn_color_white;
+  color: $txt_color_black;
+}

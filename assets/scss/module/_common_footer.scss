@@ -1,0 +1,10 @@
+footer {
+  height: 90px;
+  background-color: $base_color_black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: $txt_color_white;
+  }
+}
